@@ -32,10 +32,10 @@ el usuario es *xpec_admin* y la contraseña *qpalwosk10*, el nombre de la base d
 
 ##### Instrucciones de uso:
 
-- *0* Instalar docker y docker-compose.
-- *1* Copiar / clonar / descargar este archivo o repositorio.
-- *2* Revisar que las configuraciones predeterminadas sean las que necesitas.
-- *3* Acceder desde la consola a la carpeta donde se encuentra este proyecto.
-- *4* Ejecutar el siguiente comando sin comillas *" docker-compose build; docker-compose up -d "*
-- *5* para acceder a los contenedores basta con ejecutar el comando *" docker exec -it --nombre del contenedor- bash "*.
-- *6* para apagar el ambiente completo *" docker-compose stop "* para encederlo el ambiente completo *" docker-compose start "*
+0. Instalar docker y docker-compose.
+1. Copiar / clonar / descargar este archivo o repositorio.
+2. Revisar que las configuraciones predeterminadas sean las que necesitas.
+3. Acceder desde la consola a la carpeta donde se encuentra este proyecto.
+4. Ejecutar el siguiente comando sin comillas *" docker-compose build; docker-compose up -d "*
+5. para acceder a los contenedores basta con ejecutar el comando *" docker exec -it --nombre del contenedor- bash "*.
+6. para apagar el ambiente completo *" docker-compose stop "* para encederlo el ambiente completo *" docker-compose start "*
