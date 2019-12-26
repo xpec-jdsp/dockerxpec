@@ -18,6 +18,7 @@ done
 database_availability_check=`mysqlshow --user=root --password=$MYSQL_ROOT_PASSWORD | grep -ow "$MYSQL_DATABASE"`
 
 if [ "$database_availability_check" == "$MYSQL_DATABASE" ]; then
+mysql -u root -p$MYSQL_ROOT_PASSWORD $MYSQL_DATABASE < db_import/magento233.sql
 exit 1
 else
 mysql -u root -p$MYSQL_ROOT_PASSWORD -e "grant all on *.* to 'root'@'%' identified by '$MYSQL_ROOT_PASSWORD';"
@@ -25,4 +26,5 @@ mysql -u root -p$MYSQL_ROOT_PASSWORD -e "create database $MYSQL_DATABASE;"
 mysql -u root -p$MYSQL_ROOT_PASSWORD -e "grant all on $MYSQL_DATABASE.* to 'root'@'%' identified by '$MYSQL_ROOT_PASSWORD';"
 supervisorctl stop database_creation && supervisorctl remove database_creation
 echo "Database $MYSQL_DATABASE created"
+mysql -u root -p$MYSQL_ROOT_PASSWORD $MYSQL_DATABASE < db_import/magento233.sql
 fi
